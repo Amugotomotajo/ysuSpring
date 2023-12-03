@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.ysu.model.dao.OrderMapper">
+
+    <select id="getMyOrders" parameterType="java.lang.String" resultType="com.example.ysu.model.dto.OrderDTO">
+        SELECT *
+        FROM orderDetail
+        join menu on orderDetail.menu_id = menu.menu_id
+        join orders on orderDetail.order_id = orders.order_id
+        WHERE orderDetail.u_id = #{u_id} ;
+    </select>
+
+</mapper>
