@@ -21,4 +21,14 @@ public class CartServiceImpl implements CartService{
     public void CartDelete(int menu_id) {
         cartMapper.CartDelete(menu_id);
     }
+
+    @Override
+    public void CartUpdate(List<cartDTO> cartList) {
+        for (cartDTO cart : cartList) {
+            int quantity = cart.getQuantity();
+            int menuId = cart.getMenu_id();
+            cartMapper.CartUpdate(quantity, menuId);
+        }
+    }
+
 }

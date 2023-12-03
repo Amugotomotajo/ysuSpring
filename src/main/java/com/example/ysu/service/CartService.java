@@ -7,4 +7,6 @@ import java.util.List;
 public interface CartService {
     public List<cartDTO> CartList();
     void CartDelete(int menu_id);
+    void CartUpdate(List<cartDTO> cartList);
+
 }
