@@ -30,5 +30,4 @@ public class CartServiceImpl implements CartService{
             cartMapper.CartUpdate(quantity, menuId);
         }
     }
-
 }
