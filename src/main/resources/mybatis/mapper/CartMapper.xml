@@ -17,12 +17,10 @@
         WHERE menu_id = #{menu_id};
     </delete>
 
-    <update id="CartUpdate" parameterType="java.util.List">
-        <foreach item="item" index="index" collection="list" separator=",">
+    <update id="CartUpdate" parameterType="map">
             UPDATE cart
             SET quantity = #{quantity}
             WHERE menu_id = #{menu_id}
-            AND u_id = "2023200009;
-        </foreach>
+            AND u_id = '2023200009';
     </update>
 </mapper>
