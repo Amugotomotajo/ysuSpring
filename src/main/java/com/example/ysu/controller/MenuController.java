@@ -14,12 +14,13 @@ public class MenuController {
     @Autowired
     private final MenuService menuService;
 
-    // 전체 메뉴
+    // 사용자 메뉴
     @GetMapping("/menu")
     public List<menuDTO> MenuList() { return menuService.MenuList(); }
 
+    // 관리자 메뉴
     @GetMapping("/adminmenu")
-    public List<menuDTO> AdminMenuList() { return menuService.AdminMenuList(); }
+    public List<menuDTO> AdminMenuList() { return menuService.MenuList(); }
 
 
     // 선택 메뉴 상세 정보

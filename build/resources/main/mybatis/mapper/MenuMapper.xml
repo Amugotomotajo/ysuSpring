@@ -10,10 +10,6 @@
         SELECT * FROM menu;
     </select>
 
-    <select id="AdminMenuList" resultType="com.example.ysu.model.dto.menuDTO">
-        SELECT * FROM menu;
-    </select>
-
     <!-- 메뉴 등록 -->
     <insert id="MenuInsert" parameterType="com.example.ysu.model.dto.menuDTO">
         insert into menu (menu_name, menu_corner, menu_price, menu_pack, menu_image, menu_sales, menu_regist) values

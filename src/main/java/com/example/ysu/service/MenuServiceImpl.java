@@ -18,11 +18,6 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<menuDTO> AdminMenuList(){
-        return menuDAO.AdminMenuList();
-    }
-
-    @Override
     public menuDTO getMenuById(int menuId){
         return menuDAO.getMenuById(menuId);
     }

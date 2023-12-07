@@ -11,8 +11,6 @@ import java.util.List;
 public interface MenuDAO {
     List<menuDTO> MenuList();
 
-    List<menuDTO> AdminMenuList();
-
     void MenuInsert(menuDTO mto);
 
     void MenuUpdate(menuDTO mto);
