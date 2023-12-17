@@ -1,9 +1,13 @@
 package com.example.ysu.service;
 
 import com.example.ysu.model.dto.CartDTO;
-import org.springframework.stereotype.Service;
 
-@Service
+import java.util.List;
+
 public interface CartService {
     void insertCart(CartDTO cartDTO);
+
+    List<CartDTO> CartList(String u_id);
+    void CartDelete(int menu_id);
+    void CartUpdate(List<CartDTO> cartList);
 }

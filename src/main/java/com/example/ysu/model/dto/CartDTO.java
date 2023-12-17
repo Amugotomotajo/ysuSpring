@@ -1,18 +1,22 @@
 package com.example.ysu.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class CartDTO {
-    private Integer cart_id;
-    private String u_id;
     private Integer menu_id;
-    private Integer cart_count;
+    private String u_id;
+    private Integer quantity;
+    private String menu_name;
+    private Integer menu_price;
+    private String menu_corner;
+    private String menu_image;
     private Integer is_packed;
 }

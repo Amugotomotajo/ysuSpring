@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ReviewDTO {
     private String u_id;
+    private String u_name;
     private int order_id;
     private int menu_id;
     private int review_id;
