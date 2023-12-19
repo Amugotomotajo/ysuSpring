@@ -28,8 +28,8 @@
 
     <!-- 메뉴 등록 -->
     <insert id="MenuInsert" parameterType="com.example.ysu.model.dto.MenuDTO">
-        INSERT INTO menu (menu_name, menu_corner, menu_price, menu_pack, menu_image, menu_sales, menu_regist)
-        VALUES (#{menu_name}, #{menu_corner}, #{menu_price}, #{menu_pack}, #{menu_image},  1, 1)
+        insert into menu (menu_name, menu_corner, menu_price, menu_pack, menu_image, menu_sales, menu_regist, menu_date) values
+        (#{menu_name}, #{menu_corner}, #{menu_price}, #{menu_pack}, #{menu_image},  1, 1, DATE(CURRENT_TIMESTAMP));
     </insert>
 
     <!-- 선택 메뉴 수정-->

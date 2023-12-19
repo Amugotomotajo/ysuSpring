@@ -27,5 +27,6 @@ public class ReviewDTO {
     private String menu_image;
     private String menu_sales;
     private int menu_regist;
+    private int is_packed;
 
 }
