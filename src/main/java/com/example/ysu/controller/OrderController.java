@@ -29,6 +29,7 @@ public class OrderController {
     @PostMapping("/order/insert")
     public String orderInsert(@RequestBody OrderDTO order) {
         orderService.OrderInsert(order);
+        System.out.println(order);
         return "redirect:/cart/list";
     }
 }

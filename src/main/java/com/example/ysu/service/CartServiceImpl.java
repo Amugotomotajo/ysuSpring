@@ -30,8 +30,8 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void CartDelete(int menu_id) {
-        cartDAO.CartDelete(menu_id);
+    public void CartDelete(int menu_id, String u_id, int is_packed) {
+        cartDAO.CartDelete(menu_id, u_id, is_packed);
     }
 
     @Override
@@ -40,7 +40,12 @@ public class CartServiceImpl implements CartService {
             int quantity = cart.getQuantity();
             int menuId = cart.getMenu_id();
             String userId = cart.getU_id();
-            cartDAO.CartUpdate(quantity, menuId, userId);
+            int is_packed = cart.getIs_packed();
+            cartDAO.CartUpdate(quantity, menuId, userId, is_packed);
         }
+    }
+    @Override
+    public void CartDrop(String u_id) {
+        cartDAO.CartDrop(u_id);
     }
 }

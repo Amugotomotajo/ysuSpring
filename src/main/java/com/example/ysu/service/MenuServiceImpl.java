@@ -21,11 +21,6 @@ public class MenuServiceImpl implements MenuService {
 //    }
 
     @Override
-    public List<MenuDTO> menuList() {
-        return menuDAO.menuList();
-    }
-
-    @Override
     public MenuDTO getMenuById(Long menuId) {
         return menuDAO.getMenuById(menuId);
     }
@@ -36,8 +31,18 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<MenuDTO> adminMenuList() {
-        return menuDAO.adminMenuList();
+    public List<MenuDTO> AdminMenuList(){
+        return menuDAO.AdminMenuList();
+    }
+
+    @Override
+    public List<MenuDTO> UserMenuList(){
+        return menuDAO.UserMenuList();
+    }
+
+    @Override
+    public List<MenuDTO> AdminLastMenuList(){
+        return menuDAO.AdminLastMenuList();
     }
 
     @Override

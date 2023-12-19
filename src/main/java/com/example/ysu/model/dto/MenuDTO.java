@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,4 +20,5 @@ public class MenuDTO {
     private String menu_image; // 음식 사진
     private Integer menu_sales; // 판매 가능 여부
     private Integer menu_regist; // 등록 여부
+    private Date menu_date;
 }

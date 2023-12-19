@@ -12,11 +12,15 @@ import java.util.List;
 @Mapper
 public interface MenuDAO {
 
-    List<MenuDTO> menuList();
     MenuDTO getMenuById(Long menuId);
 
     void MenuInsert(MenuDTO mto);
     void MenuUpdate(MenuDTO mto);
-    List<MenuDTO> adminMenuList();
+
+    List<MenuDTO> AdminMenuList();
+
+    List<MenuDTO> UserMenuList();
+
+    List<MenuDTO> AdminLastMenuList();
 
 }

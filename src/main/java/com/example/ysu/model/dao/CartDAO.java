@@ -12,8 +12,14 @@ import java.util.List;
 public interface CartDAO {
 
     List<CartDTO> CartList(String u_id);
-    void CartDelete(int menu_id);
+    void CartDelete(@Param("menu_id") int menu_id, @Param("u_id") String u_id, @Param("is_packed") int is_packed);
 
-    void CartUpdate(@Param("quantity") int quantity, @Param("menu_id") int menu_id, @Param("u_id") String u_id);
+    void CartUpdate(@Param("quantity") int quantity,
+                    @Param("menu_id") int menu_id,
+                    @Param("u_id") String u_id,
+                    @Param("is_packed") int is_packed);
 
+    void CartUpdate();
+
+    void CartDrop(@Param("u_id") String u_id);
 }

@@ -25,12 +25,12 @@ public class ReviewController {
     }
 
     // 리뷰 추가
-    @PostMapping("/menu/review/write")
-    public ResponseEntity<List<InsertReviewDTO>> reviewInsert(@RequestBody InsertReviewDTO reviewDTO) {
-        reviewService.reviewInsert(reviewDTO);
-        System.out.print(reviewDTO);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+//    @PostMapping("/menu/review/write")
+//    public ResponseEntity<List<InsertReviewDTO>> reviewInsert(@RequestBody ReviewDTO reviewDTO) {
+//        reviewService.reviewInsert(reviewDTO);
+//        System.out.print(reviewDTO);
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     @DeleteMapping("/review/delete/{review_id}/{u_id}")
     public String reviewDelete(@PathVariable Integer review_id, @PathVariable String u_id) {

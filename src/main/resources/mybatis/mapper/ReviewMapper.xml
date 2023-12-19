@@ -12,7 +12,7 @@
     </select>
 
     <select id="reviewList" resultType="com.example.ysu.model.dto.ReviewDTO">
-        SELECT r.u_id, r.u_name, r.order_id, m.menu_id, r.review_id, r.review_writing, r.review_star, r.review_time, r.review_regist
+        SELECT r.u_id, r.u_name, r.order_id, m.menu_id, r.review_id, r.review_writing, r.review_star, r.review_time, r.review_regist, r.review_img
         FROM menu m
         INNER JOIN review r ON m.menu_id = r.menu_id
         where m.menu_id = #{menu_id};
@@ -23,10 +23,10 @@
     <!--    </select>-->
 
     <insert id="reviewInsert" parameterType="com.example.ysu.model.dto.ReviewDTO">
-        INSERT INTO review (u_id, u_name, order_id, menu_id, review_writing, review_star, review_time, review_regist)
-        SELECT u.u_id, u.u_name, od.order_id, od.menu_id, #{review_writing} as review_writing, #{review_star} as review_star, NOW() as review_time, 1
+        INSERT INTO review (u_id, u_name, order_id, menu_id, review_writing, review_star, review_time, review_regist, review_img)
+        SELECT u.u_id, u.u_name, od.order_id, od.menu_id, #{review_writing}, #{review_star}, NOW() as review_time, 1, #{review_img}
         FROM orders o
-        INNER JOIN orderDetail od ON o.order_id = od.order_id
+        INNER JOIN orderdetail od ON o.order_id = od.order_id
         INNER JOIN menu m ON od.menu_id = m.menu_id
         INNER JOIN users u ON u.u_id = od.u_id
         <!--        LEFT JOIN review r ON u.u_name = r.u_name-->

@@ -7,7 +7,7 @@
 
     <!-- 사용자 -->
     <!-- 전체 메뉴 뷰 -->
-    <select id="menuList" resultType="com.example.ysu.model.dto.MenuDTO">
+    <select id="UserMenuList" resultType="com.example.ysu.model.dto.MenuDTO">
         SELECT * FROM menu WHERE menu_regist = 1;
     </select>
 
@@ -16,10 +16,14 @@
         SELECT * FROM menu WHERE menu_id = #{menuId};
     </select>
 
-    <!-- 관리자 -->
-    <!-- 전체 메뉴 검색 -->
-    <select id="adminMenuList" resultType="com.example.ysu.model.dto.MenuDTO">
-        SELECT * FROM menu;
+    <!-- 관리자 전체 메뉴 검색 -->
+    <select id="AdminMenuList" resultType="com.example.ysu.model.dto.MenuDTO">
+        select * from menu where menu_date between '2023-12-18' and '2023-12-22';
+    </select>
+
+    <!-- 지난 메뉴 확인 -->
+    <select id="AdminLastMenuList" resultType="com.example.ysu.model.dto.MenuDTO">
+        select * from menu;
     </select>
 
     <!-- 메뉴 등록 -->

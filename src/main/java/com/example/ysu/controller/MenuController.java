@@ -16,20 +16,23 @@ import java.util.List;
 @RestController
 public class MenuController {
     private final MenuService menuService;
-
+    // 사용자 메뉴
     @GetMapping("/menu")
-    public List<MenuDTO> menuList(){
-        return menuService.menuList();
-    }
+    public List<MenuDTO> UserMenuList() { return menuService.UserMenuList(); }
+
+    // 관리자 메뉴
+    @GetMapping("/adminmenu")
+    public List<MenuDTO> AdminMenuList() { return menuService.AdminMenuList(); }
+
+    // 관리자 지난 메뉴
+    @GetMapping("/lastmenu")
+    public List<MenuDTO> AdminLastMenuList() { return menuService.AdminLastMenuList(); }
 
     @GetMapping("/menu/{menuid}")
     public MenuDTO menuById(@PathVariable Long menuid) {
         return menuService.getMenuById(menuid);
     }
 
-    // 관리자 메뉴
-    @GetMapping("/adminmenu")
-    public List<MenuDTO> adminMenuList() { return menuService.adminMenuList(); }
 
     // 선택 메뉴 상세 정보
     @GetMapping("/adminmenu/menudetail/{menuid}")

@@ -21,4 +21,5 @@ public class InsertReviewDTO {
     private Integer review_star;
     private Date review_time;
     private Integer review_regist;
+    private String review_img;
 }

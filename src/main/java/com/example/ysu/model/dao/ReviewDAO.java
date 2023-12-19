@@ -16,10 +16,10 @@ public interface ReviewDAO {
 
     List<ReviewDTO> reviewList(Integer menu_id);
 
-    public void reviewInsert(InsertReviewDTO reviewDTO);
+    void reviewInsert(InsertReviewDTO reviewDTO);
 
     // public void reviewUpdate(ReviewDTO reviewDTO);
 
-    public void reviewDelete(@Param("review_id")Integer review_id, @Param("u_id") String u_id);
+    void reviewDelete(@Param("review_id")Integer review_id, @Param("u_id") String u_id);
 
 }

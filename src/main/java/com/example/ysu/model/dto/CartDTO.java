@@ -19,4 +19,5 @@ public class CartDTO {
     private String menu_corner;
     private String menu_image;
     private Integer is_packed;
+    private Integer cart_price;
 }

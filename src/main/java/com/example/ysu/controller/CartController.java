@@ -28,16 +28,22 @@ public class CartController {
         return cartService.CartList(u_id);
     }
 
-    @DeleteMapping("/cart/delete/{menu_id}")
-    public String CartDelete(@PathVariable int menu_id) {
-        cartService.CartDelete(menu_id);
+    @DeleteMapping("/cart/delete/{menu_id}/{u_id}/{is_packed}")
+    public String CartDelete(@PathVariable int menu_id, @PathVariable String u_id, @PathVariable int is_packed) {
+        cartService.CartDelete(menu_id, u_id, is_packed);
         return "redirect:/cart/list";
     }
 
-    @PutMapping("cart/update")
-    public String CartUpdate(@RequestBody List<CartDTO> Update) {
+    @PutMapping("/cart/update/{u_id}")
+    public String CartUpdate(@RequestBody List<CartDTO> Update, @PathVariable String u_id) {
         System.out.println(Update);
         cartService.CartUpdate(Update);
+        return "redirect:/order/insert";
+    }
+
+    @DeleteMapping("/cart/drop/{u_id}")
+    public String CartDrop(@PathVariable String u_id) {
+        cartService.CartDrop(u_id);
         return "redirect:/order/insert";
     }
 }

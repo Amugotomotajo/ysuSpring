@@ -1,7 +1,6 @@
 package com.example.ysu.service;
 
 import com.example.ysu.model.dao.ReviewDAO;
-import com.example.ysu.model.dto.InsertReviewDTO;
 import com.example.ysu.model.dto.ReviewDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -24,10 +23,10 @@ public class ReviewServiceImpl implements ReviewService {
         return reviewDAO.reviewList(menu_id);
     }
 
-    @Override
-    public void reviewInsert(InsertReviewDTO reviewDTO) {
-        reviewDAO.reviewInsert(reviewDTO);
-    }
+//    @Override
+//    public void reviewInsert(ReviewDTO reviewDTO) {
+//        reviewDAO.reviewInsert(reviewDTO);
+//    }
 
     @Override
     public void reviewDelete(Integer review_id, String u_id) {

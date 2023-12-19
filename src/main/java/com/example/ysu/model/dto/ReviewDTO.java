@@ -15,6 +15,7 @@ public class ReviewDTO {
     private int order_id;
     private int menu_id;
     private int review_id;
+    private String review_img;
     private String review_writing;
     private int review_star;
     private String review_time;
@@ -26,4 +27,5 @@ public class ReviewDTO {
     private String menu_image;
     private String menu_sales;
     private int menu_regist;
+
 }
